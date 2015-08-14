@@ -54,6 +54,7 @@ int main (int argc, char const *argv[]){
 	while(opcion < 3){
 		if(opcion == 1){
 			vector <string> vectorNombres;
+			vector <string> vectorNumeros;
 			//*******Generar nombres con numeros**********
 			//leer nombres
 			FILE *fp;
@@ -64,10 +65,14 @@ int main (int argc, char const *argv[]){
 			while(c = fgets(cadena,100,fp)){
 				vectorNombres.push_back(cadena);	
 			}
-			for (int i = 0; i < vectorNombres.size(); ++i)
-			{
-				cout<<i<<endl;
+
+			//leer numeros
+			fp = fopen("Numeros","r");
+
+			while(c = fgets(cadena,100,fp)){
+				vectorNumeros.push_back(cadena);
 			}
+			cout<< vectorNumeros.size();
 		}
 		if(opcion == 2){
 
