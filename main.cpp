@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <fstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 struct Item{
@@ -51,14 +53,20 @@ int main (int argc, char const *argv[]){
 	cin >> opcion;
 	while(opcion < 3){
 		if(opcion == 1){
-			//Generar nombres con numeros
+			vector <string> vectorNombres;
+			//*******Generar nombres con numeros**********
+			//leer nombres
 			FILE *fp;
 			char *c, cadena[100];
 
-			fp = fopen("lectura.txt","r");
+			fp = fopen("Nombres","r");
 
 			while(c = fgets(cadena,100,fp)){
-				cout<<cadena;
+				vectorNombres.push_back(cadena);	
+			}
+			for (int i = 0; i < vectorNombres.size(); ++i)
+			{
+				cout<<i<<endl;
 			}
 		}
 		if(opcion == 2){
