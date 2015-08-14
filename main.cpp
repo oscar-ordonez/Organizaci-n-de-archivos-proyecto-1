@@ -52,7 +52,7 @@ int main (int argc, char const *argv[]){
 	cout << "MENU \n\t1. Generar datos\n\t2. Ver Datos\n\t3. Salir" << endl;
 	cin >> opcion;
 	while(opcion < 3){
-		if(opcion == 1){
+		/*if(opcion == 1){
 			vector <string> vectorNombres;
 			vector <string> vectorNumeros;
 			vector <string> vectorNombresNumeros;
@@ -109,8 +109,7 @@ int main (int argc, char const *argv[]){
 
 		}
 		cout << "MENU \n\t1. Generar datos\n\t2. Ver Datos\n\t3. Salir" << endl;
-		cin >> opcion;	
+		cin >> opcion;	*/
 	}
-
 	return 0;
 }
