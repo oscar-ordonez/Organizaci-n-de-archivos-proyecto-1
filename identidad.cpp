@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]){
 	for (int i = 0; i < 500; ++i){
 		random_integer = (rand()%18)+1;
 		random_integer2 = (rand()%50)+1;
-		random_integer3 = (rand()%1997)+1900; 
+		random_integer3 = rand() % 98 + 1900;
 		if (random_integer <= 9){
 			cout << "0" << random_integer;
 		}else{
