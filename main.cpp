@@ -55,6 +55,7 @@ int main (int argc, char const *argv[]){
 		if(opcion == 1){
 			vector <string> vectorNombres;
 			vector <string> vectorNumeros;
+			vector <string> vectorNombresNumeros;
 			//*******Generar nombres con numeros**********
 			//leer nombres
 			FILE *fp;
@@ -72,7 +73,29 @@ int main (int argc, char const *argv[]){
 			while(c = fgets(cadena,100,fp)){
 				vectorNumeros.push_back(cadena);
 			}
-			cout<< vectorNumeros.size();
+			
+			//unir numeros y personas
+			int cont1 = 0;//contador de nombres
+			int cont2 = 0;//contador de numero1
+			int cont3 = 1;//contador de numero2
+			int cont4 = 0;//contador de numeros general
+			for (int i = 0; i < vectorNombres.size(); ++i) {
+				if(i<250){
+					vectorNombresNumeros.push_back(
+						vectorNombres[cont1] + "\t" + vectorNumeros[cont2] + "," + vectorNumeros[cont3]);
+					cont1++;
+					cont2+= 2;
+					cont4++;
+					cont3+= 2;
+					cont4++;
+				}
+				if(i > 250){
+					vectorNombresNumeros.push_back(vectorNombres[cont1-1] + "\t" + vectorNumeros[cont3-2]);
+					cont1++;
+					cont3++;
+				}
+			}
+			
 		}
 		if(opcion == 2){
 
