@@ -95,7 +95,15 @@ int main (int argc, char const *argv[]){
 					cont3++;
 				}
 			}
-			
+			//*******Generar los generos**********
+			for (int i = 0; i < vectorNombresNumeros.size(); ++i){
+				string temp = vectorNombresNumeros[i];
+				if(i%2 == 0){
+					vectorNombresNumeros[i] = temp + "Masculino";
+				}else{
+					vectorNombresNumeros[i] = temp + "Femenino";
+				}
+			}
 		}
 		if(opcion == 2){
 
