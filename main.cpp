@@ -19,7 +19,15 @@ istream& operator >> (istream& input, Item& item){
 }
 
 void leer() {
-
+	int cont;
+	Item item;
+	ifstream file("data.bin", ifstream::binary);
+	while(file.read(reinterpret_cast<char*>(&item), sizeof(item))){
+		
+		cout << item << endl;
+	}
+	
+	file.close();
 }
 
 void escribir () {
@@ -39,5 +47,6 @@ void escribir () {
 int main (int argc, char const *argv[]){
 	escribir();	
 
+	leer();
 	return 0;
 }
