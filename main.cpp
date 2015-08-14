@@ -18,7 +18,7 @@ istream& operator >> (istream& input, Item& item){
 	return input;
 }
 
-void leer() {
+void leer() { // Leer archivo Binario
 	int cont;
 	Item item;
 	ifstream file("data.bin", ifstream::binary);
@@ -30,7 +30,7 @@ void leer() {
 	file.close();
 }
 
-void escribir () {
+void escribir () { // escribir Archivo Binario
 	int cont;
 	Item item;
 	ofstream file ("data.bin", ofstream::binary);
@@ -45,8 +45,28 @@ void escribir () {
 }
 
 int main (int argc, char const *argv[]){
-	escribir();	
+	//Menu
+	int opcion;
+	cout << "MENU \n\t1. Generar datos\n\t2. Ver Datos\n\t3. Salir" << endl;
+	cin >> opcion;
+	while(opcion < 3){
+		if(opcion == 1){
+			//Generar nombres con numeros
+			FILE *fp;
+			char *c, cadena[100];
 
-	leer();
+			fp = fopen("lectura.txt","r");
+
+			while(c = fgets(cadena,100,fp)){
+				cout<<cadena;
+			}
+		}
+		if(opcion == 2){
+
+		}
+		cout << "MENU \n\t1. Generar datos\n\t2. Ver Datos\n\t3. Salir" << endl;
+		cin >> opcion;	
+	}
+
 	return 0;
 }
