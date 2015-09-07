@@ -1,5 +1,6 @@
 #include <iostream>
 #include "persona.h"
+#include "telefono.h"
 
 using namespace std;
 
