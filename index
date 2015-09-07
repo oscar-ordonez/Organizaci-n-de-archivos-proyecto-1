@@ -1,0 +1,151 @@
+
+short BinarySearchID(int ID1){
+	fstream prim ("Primary.txt", ios::in | ios:: binary | ios::out);
+	short first = 0;
+	short last = CounterID-1;
+	short mid;
+	bool found = false;
+	int temp;
+	while (first <= last && !found){
+		mid = (first + last) / 2;
+		prim.seekg(mid*6,ios::beg);
+		prim.read((char*)&tmp,sizeof(temp));
+
+		if(temo == ID1)
+			found = true;
+		else if(temp > ID1)
+			last = mid -1;
+		else
+			first = mid + 1;
+	}
+	if (found)
+		short of;
+		prim.seekg((mid6)+4,ios::beg);
+		prim.read((char*)&of, sizeof(of));
+		prim.close();
+		return of;
+	}
+	else{
+		prim.close();
+		return (short)-1;
+	}
+}
+
+void insertsorted ( char id[],short offset){
+	fstream prim ("Primary.txt", ios::out | ios:: binary | ios::in);
+	int x = 0;
+	for (int i = 0; id[i] != ´\0´; i++){
+		x*=10;
+		x+=(id[i] - ´0´);
+	}
+	int tmp = 0;
+	short of = 0;
+	bool hi = false;
+	if (counterID == 0){
+		prim.write((char*)&x, sizeof(int));
+		prim.write((char*)&offset,sizeof(short));
+		counterID++;
+		return;
+	}
+	prim.read((char*)&tmp, sizeof(tmp));
+	while (prim.good()){
+		if (tmp > x){
+			hi = true;
+			prim.seekg(-4,ios::cur);
+			of = prim.tellg();
+			break;
+		}
+
+		prim.seekg(2, ios::cur);
+		prim.read((char*)&tmp, sizeof(tmp));
+	}
+	prim.close();
+	prim.open("primary.txt",ios::out|ios::binary|ios::in);
+	if(!hi){//in the last position
+		prim.seekg(CounterID * 6, ios::beg);
+		prim.write((char*)&x, sizeof(int));
+		prim.write((char*)&offset, sizeof(short));
+		CounterID++;
+	}else{
+		prim.seekg((CounterID - 1) * 6, ios::beg);
+		int numend;
+		short ofend;
+		prim.read((char*)& numend, sizeof(numend));
+		prim.read((char*)& ofend, sizeof(ofend));
+
+		prim.seekg(of, ios::beg);
+
+		while(prim.good()){
+			int tmpnum, short tmpof;
+			int tmpnum1, short tmpof1;
+			prim.read((char*)& tmpnum, sizeof(tmpnum));
+			prim.read((char*)& tmpof, sizeof(tmpof));
+			prim.read((char*)& tmpnum1, sizeof(tmpnum1));
+			prim.read((char*)& tmpof1, sizeof(tmpof1));
+			prim.seekg(-6, ios::cur);
+			prim.write((char*)& tmpnum, sizeof(tmpnum));
+			prim.write((char*)& tmpof, sizeof(tmpof));
+		}
+		prim.close();
+		prim.open("Primary.txt", ios::out | ios::in | ios::binarry);
+		prim.seekg(CounterID * 6, ios::end);
+
+		prim.write((char*)& numend, sizeof(numend));
+		prim.write((char*)& ofend, sizeof(ofend));
+		prim.seekg(of, ios::beg);
+		prim.write((char*)& x, sizeof(x));
+		prim.write((char*)& offset, sizeof(of));
+		CounterID++;
+
+	}
+	prim.close();
+	prim.open("Primary.txt", ios::out | ios::in | ios::binary);
+	int tt;
+	short rr;
+	prim.read((char*)&tt, sizeof(tt));
+	prim.read((char*)&rr, sizeof(rr));
+	while(prim.good()){
+		cout << "ID" << tt << "Off" << rr << endl;
+		prim.read((char*)&tt, sizeof(tt));
+		prim.read((char*)&rr, sizeof(rr));
+	}
+	prim.close();
+}
+}
+
+
+void Deleteprimary(int ID1){
+	fstream prim("Primary.txt", ios::in | ios::binary | ios::out );
+	short first = 0;
+	short last = CounterID -1;
+	short mid;
+	bool found = false;
+	int temp;
+	while(first <= last && !found){
+		mid = (first + last) / 2;
+		prim.seekg(mid * 6, ios::beg);
+		prim.read((char*)&temp, sizeof(temp));
+
+		if(temp == ID1)
+			found = true;
+		else if (temp > ID1)
+			last = mid -1;
+		else first = mid + 1;
+	}
+	if(found){
+		prim.seekg((mid + 1 )*6, ios::beg);
+		while(prim.good()){
+			int tmpnum, short tmpof;
+			prim.read((char*)& tmpnum, sizeof(tmpnum));
+			prim.read((char*)& tmpof, sizeof(tmpof));
+			prim.seekg(-12, ios::cur);
+			prim.write((char*)& tmpnum, sizeof(tmpnum));
+			prim.write((char*)& tmpof, sizeof(tmpof));
+			prim.seekg(6, ios::cur);
+		}
+		prim.close();
+		prim.open("Primary.txt", ios::out | ios::in | ios::binary);
+
+		CounterID--;
+	}
+}
