@@ -1,15 +1,15 @@
 #ifndef TELEFONO_H
 #define TELEFONO_H
-
+#include <cstring>
 using namespace std;
 
 class telefono{
 	
 	protected:
 		string id;
-		char* telefono;
+		char* tel;
 	public:
-		telefono(string,char[]);
+		telefono(string, char[]);
 		
 		//get y set telefono
 		void setTelefono(char*);

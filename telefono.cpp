@@ -1,4 +1,6 @@
 #include "telefono.h"
+#include <cstring>
+using namespaces std;
 
 telefono::telefono(string id,char[] numeroTelefono){
 
