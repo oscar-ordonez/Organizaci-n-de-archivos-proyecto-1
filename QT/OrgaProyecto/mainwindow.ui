@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>617</width>
+    <height>386</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTextEdit" name="llenado">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>591</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>300</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cargar Datos</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>617</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuAgregar">
+     <property name="title">
+      <string>Agregar</string>
+     </property>
+     <addaction name="actionAgregarCiudad"/>
+     <addaction name="actionAgregarCliente"/>
+     <addaction name="actionAgregarLinea_del_Cliente"/>
+     <addaction name="actionAgregarLlamada"/>
+    </widget>
+    <widget class="QMenu" name="menuModificar">
+     <property name="title">
+      <string>Modificar</string>
+     </property>
+     <addaction name="actionModificarCiudad"/>
+     <addaction name="actionModificarCliente"/>
+     <addaction name="actionModificarLinea_del_Cliente"/>
+    </widget>
+    <widget class="QMenu" name="menuEliminar">
+     <property name="title">
+      <string>Eliminar</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionEliminarCiudad"/>
+     <addaction name="actionEliminarCliente"/>
+     <addaction name="actionEliminarLinea_del_Cliente"/>
+     <addaction name="actionEliminarLlamada"/>
+    </widget>
+    <addaction name="menuAgregar"/>
+    <addaction name="menuModificar"/>
+    <addaction name="menuEliminar"/>
+    <addaction name="actionBuscar"/>
+    <addaction name="actionVisualizar"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionBuscar">
+   <property name="text">
+    <string>Buscar</string>
+   </property>
+  </action>
+  <action name="actionVisualizar">
+   <property name="text">
+    <string>Visualizar</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAgregarCiudad">
+   <property name="text">
+    <string>Ciudad</string>
+   </property>
+  </action>
+  <action name="actionAgregarCliente">
+   <property name="text">
+    <string>Cliente</string>
+   </property>
+  </action>
+  <action name="actionAgregarLinea_del_Cliente">
+   <property name="text">
+    <string>Linea del Cliente</string>
+   </property>
+  </action>
+  <action name="actionAgregarLlamada">
+   <property name="text">
+    <string>Llamada</string>
+   </property>
+  </action>
+  <action name="actionModificarCiudad">
+   <property name="text">
+    <string>Ciudad</string>
+   </property>
+  </action>
+  <action name="actionModificarCliente">
+   <property name="text">
+    <string>Cliente</string>
+   </property>
+  </action>
+  <action name="actionModificarLinea_del_Cliente">
+   <property name="text">
+    <string>Linea del Cliente</string>
+   </property>
+  </action>
+  <action name="actionEliminarCiudad">
+   <property name="text">
+    <string>Ciudad</string>
+   </property>
+  </action>
+  <action name="actionEliminarCliente">
+   <property name="text">
+    <string>Cliente</string>
+   </property>
+  </action>
+  <action name="actionEliminarLinea_del_Cliente">
+   <property name="text">
+    <string>Linea del Cliente</string>
+   </property>
+  </action>
+  <action name="actionEliminarLlamada">
+   <property name="text">
+    <string>Llamada</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
